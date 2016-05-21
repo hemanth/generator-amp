@@ -1,4 +1,4 @@
-# generator-amp [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-[amp](https://www.ampproject.org/) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Accelerated Mobile Page generator.
 
 ## Installation
