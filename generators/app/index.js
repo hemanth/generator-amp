@@ -13,146 +13,144 @@ module.exports = yeoman.Base.extend({
       choices: [
         {
           name: 'amp-accordion',
-          value: 'ampAccordion'
+          value: 'amp-accordion'
         },
         {
           name: 'amp-analytics',
-          value: 'ampAnalytics'
+          value: 'amp-analytics'
         },
         {
           name: 'amp-anim',
-          value: 'ampAnim'
+          value: 'amp-anim'
         },
         {
           name: 'amp-audio',
-          value: 'ampAudio'
+          value: 'amp-audio'
         },
         {
           name: 'amp-brid-player',
-          value: 'ampBridPlayer'
+          value: 'amp-brid-player'
         },
         {
           name: 'amp-brightcove',
-          value: 'ampBrightcove'
+          value: 'amp-brightcove'
         },
         {
           name: 'amp-carousel',
-          value: 'ampCarousel'
+          value: 'amp-carousel'
         },
         {
           name: 'amp-dailymotion',
-          value: 'ampDailyMotion'
+          value: 'amp-dailymotion'
         },
         {
           name: 'amp-dynamic-css-classes',
-          value: 'ampDynamicCssClasses'
+          value: 'amp-dynamic-css-classes'
         },
         {
           name: 'amp-facebook',
-          value: 'ampFacebook'
+          value: 'amp-facebook'
         },
         {
           name: 'amp-fit-text',
-          value: 'ampFittext'
+          value: 'amp-fit-text'
         },
         {
           name: 'amp-font',
-          value: 'ampFont'
+          value: 'amp-font'
         },
         {
           name: 'amp-fx-flying-carpet',
-          value: 'ampFxFlyingCarpet'
+          value: 'amp-fx-flying-carpet'
         },
         {
           name: 'amp-iframe',
-          value: 'ampIframe'
+          value: 'amp-iframe'
         },
         {
           name: 'amp-image-lightbox',
-          value: 'ampImageLightbox'
+          value: 'amp-image-lightbox'
         },
         {
           name: 'amp-instagram',
-          value: 'ampInstagram'
+          value: 'amp-instagram'
         },
         {
           name: 'amp-install-serviceworker',
-          value: 'ampInstallServiceworker'
+          value: 'amp-install-serviceworker'
         },
         {
           name: 'amp-jwplayer',
-          value: 'ampJwplayer'
+          value: 'amp-jwplayer'
         },
         {
           name: 'amp-kaltura-player',
-          value: 'ampKalturaPlayer'
+          value: 'amp-kaltura-player'
         },
         {
           name: 'amp-lightbox',
-          value: 'ampLightbox'
+          value: 'amp-lightbox'
         },
         {
           name: 'amp-list',
-          value: 'ampList'
+          value: 'amp-list'
         },
         {
           name: 'amp-mustache',
-          value: 'ampMustache'
+          value: 'amp-mustache'
         },
         {
           name: 'amp-pinterest',
-          value: 'ampPinterest'
+          value: 'amp-pinterest'
         },
         {
           name: 'amp-reach-player',
-          value: 'ampReachPlayer'
+          value: 'amp-reach-player'
         },
         {
           name: 'amp-sidebar',
-          value: 'ampSidebar'
+          value: 'amp-sidebar'
         },
         {
           name: 'amp-social-share',
-          value: 'ampSocialShare'
+          value: 'amp-social-share'
         },
         {
           name: 'amp-soundcloud',
-          value: 'ampSoundCloud'
+          value: 'amp-soundcloud'
         },
         {
           name: 'amp-springboard-player',
-          value: 'ampSpringboardPlayer'
+          value: 'amp-springboard-player'
         },
         {
           name: 'amp-twitter',
-          value: 'ampTwitter'
+          value: 'amp-twitter'
         },
         {
           name: 'amp-user-notification',
-          value: 'ampUserNotification'
+          value: 'amp-user-notification'
         },
         {
           name: 'amp-vimeo',
-          value: 'ampVimeo'
+          value: 'amp-vimeo'
         },
         {
           name: 'amp-vine',
-          value: 'ampVine'
+          value: 'amp-vine'
         },
         {
           name: 'amp-youtube',
-          value: 'ampYoutube'
+          value: 'amp-youtube'
         }
       ]
     }];
     return this.prompt(prompts).then(function (props) {
-      // To access props later use this.props.someAnswer;
       this.props = props;
     }.bind(this));
   },
   writing: function () {
-    console.log('in writing', this.props.features);
-    this.fs.copy(this.templatePath('index.html'), this.destinationPath('index.html'), {features: this.props.features});
+    this.fs.copyTpl(this.templatePath('index.html'), this.destinationPath('index.html'), {modules: this.props.modules});
   },
   install: function () {
     this.installDependencies();
