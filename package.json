@@ -21,7 +21,8 @@
   "dependencies": {
     "yeoman-generator": "^0.23.0",
     "chalk": "^1.0.0",
-    "yosay": "^1.0.0"
+    "yosay": "^1.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "yeoman-test": "^1.0.0",
@@ -45,8 +46,10 @@
   },
   "repository": "hemanth/generator-amp",
   "scripts": {
-    "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "prepublish": "npm run snyk-protect && gulp prepublish",
+    "test": "gulp",
+    "snyk-protect": "snyk protect"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
